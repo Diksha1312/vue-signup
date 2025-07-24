@@ -71,9 +71,19 @@ export default {
         handleSubmit() {
             this.passwordError = this.password.length > 5 ? 
             '' : 'Password must be at least 5 characters long';
+            if (!this.passwordError) {
+                alert(`Account created for ${this.email} with role ${this.role}`);
+                // Reset form
+                this.email = '';
+                this.password = '';
+                this.role = '';
+                this.terms = false;
+                this.tempSkills = '';
+                this.skills = [];
             }
         }
     }
+}
 </script>
 
 <style>
